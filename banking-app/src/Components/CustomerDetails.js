@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getCustomerDetailsList } from "../Services/CustomerDetails.service";
+import { getCustomerDetailsList, onCustomerDeleteClickHandler } from "../Services/CustomerDetails.service";
 
 
 export default()=>{
@@ -21,11 +21,19 @@ export default()=>{
             <thead>
                 <tr>
                     <th>Customer ID</th>
-                    <th>Title</th>
-                    <th>First Name</th>
+                    <th>Customer Name</th>
                     <th>Aadhar Number</th>
+                    <th>Email Id</th>
+                    <th>Mobile No</th>
+                    <th>DOB</th>
+                    <th>Balance</th>
+                    <th>Occupation Type</th>
+                    <th>Income Source</th>
+                    <th>Annual Income</th>
                     <th>Residencial Pin Code</th>
-                    <th>Opt for Debit card</th>
+                    <th>Debit card</th>
+                    <th>Net Banking</th>
+                    <th>Option</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,12 +41,19 @@ export default()=>{
                    return(
                 <tr key={customer.custId}>
                     <td>{customer.custId}</td>
-                    <td>{customer.title}</td>
-                    <td>{customer.firstName}</td>
+                    <td>{customer.title+" "+customer.firstName+" "+customer.middleName+" "+customer.lastName}</td>
                     <td>{customer.aadharNumber}</td>
+                    <td>{customer.email}</td>
+                    <td>{customer.mobileNumber}</td>
+                    <td>{customer.dob}</td>
+                    <td>{customer.initialAmount}</td>
+                    <td>{customer.occupationType}</td>
+                    <td>{customer.incomeSource}</td>
+                    <td>{customer.grossAnnualIncome}</td>
                     <td>{customer.residPincode}</td>
                     <td>{customer.debitCard}</td>
-                    
+                    <td>{customer.optNetBank}</td>
+                    <td><button onClick={()=>{onCustomerDeleteClickHandler(customer.custId)}} className="btn btn-danger">Delete</button></td>
                 </tr>
                    )
                })}

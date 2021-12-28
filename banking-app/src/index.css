@@ -22,7 +22,7 @@ code {
   width: 1300px;
   margin-left: 40px;
 }
-.dashboard{
+#dashboard{
   text-align: center;
   font-size: 32px;
   font-family: cursive;

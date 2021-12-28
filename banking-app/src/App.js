@@ -16,6 +16,7 @@ import Approval from './Components/Approval';
 import CustomerDetails from './Components/CustomerDetails';
 import Payee from './Components/Payee';
 import TransactionTable from './Components/TransactionTable';
+import CustomerCreate from './Components/CustomerCreate';
 
 
 
@@ -28,19 +29,25 @@ function App() {
      {/* <Imps/> */}
      {/* <Neft/> */}
      {/* <Rtgs/> */}
-    {/* <Navbar/><br/> */}
+    <Navbar/><br/>
     
-   <AccountDetails/>
+   {/* <AccountDetails/> */}
    {/* <Admin/> */}
    {/* <Approval/> */}
    {/* <CustomerDetails/> */}
+   {/* <CustomerCreate/> */}
    {/* <Payee/> */}
    {/* <TransactionTable/> */}
     
-    {/* <Routes>
+    <Routes>
     <Route path={'/changepwd'} element={<ChangePwd/>}></Route>
     <Route path={'/addpayee'} element={<AddPayee/>}></Route>
-    </Routes> */}
+    <Route path={'/neft'} element={<Neft/>}></Route>
+    <Route path={'/rtgs'} element={<Rtgs/>}></Route>
+    <Route path={'/imps'} element={<Imps/>}></Route>
+    <Route path={'/accdetails'} element={<AccountDetails/>}></Route>
+    <Route path={'/custdetails'} element={<CustomerDetails/>}></Route>
+    </Routes>
    
     </div>
   );
